@@ -3,6 +3,9 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
+class Transaction < ActiveRecord::Base
+end
+
 data = Array.new
 
 CSV.foreach("./data/SalesJan2009.csv", 
