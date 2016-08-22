@@ -3,19 +3,21 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-data = CSV.read("./data/SalesJan2009.csv", 
+data = Array.new
+
+CSV.foreach("./data/SalesJan2009.csv", 
   { 
     encoding: "UTF-8", 
     headers: true,
     header_converters: :symbol,
     converters: :all
   }
-)
-
-hashed_data = data.map { |d| d.to_hash }
+) do |row|
+  data << row.to_hash
+end
 
 get "/" do
-  @transactions = hashed_data
+  @transactions = data
   erb :"transactions/index"
   # "Hello World"
 end
