@@ -1,7 +1,29 @@
-<ul>
-<% @transactions.each do |transaction| %>
-  <li>
-    <%= transaction %>
-  </li>
-<% end %>
-</ul>
+<h1>All Transactions</h1>
+<table>
+  <tr>
+    <th>Transaction Date</th>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Payment Type</th>
+    <th>Name</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Account Created</th>
+    <th>Last Login</th>
+  </tr>
+  <% @transactions.each do |t| %>
+  <tr>
+    <td><%= t.transaction_date %></td>
+    <td><%= t.product %></td>
+    <td><%= t.price %></td>
+    <td><%= t.payment_type %></td>
+    <td><%= t.name %></td>
+    <td><%= t.city %></td>
+    <td><%= t.state %></td>
+    <td><%= t.country %></td>
+    <td><%= t.account_created %></td>
+    <td><%= t.last_login %></td>
+  </tr>
+  <% end %>
+</table>

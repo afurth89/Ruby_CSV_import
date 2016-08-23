@@ -1,4 +1,4 @@
-require 'csv'
+require 'csv' 
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
@@ -6,21 +6,10 @@ require './environments'
 class Transaction < ActiveRecord::Base
 end
 
-# data = Array.new
-
-# CSV.foreach("./data/SalesJan2009.csv", 
-#   { 
-#     encoding: "UTF-8", 
-#     headers: true,
-#     header_converters: :symbol,
-#     converters: :all
-#   }
-# ) do |row|
-#   data << row.to_hash
-# end
-
 get "/" do
-  @transactions = data
+  @transactions = Array.new
+  Transaction.find_each do |transaction|
+    @transactions << transaction.to_hash
+  end
   erb :"transactions/index"
-  # "Hello World"
 end
