@@ -3,8 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Ruby CSV Import</title>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+      body {
+        padding-top: 75px;
+      }
+      .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+      }
+      .container {
+        max-width:1000px;
+      }
+    </style>
 </head>
 <body>
-  <%= yield %>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Sinatra Sings</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">All Transactions</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
