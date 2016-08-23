@@ -8,11 +8,14 @@ end
 
 # ALL transactions
 get "/" do
-  @transactions = Array.new
-  Transaction.find_each do |transaction|
-    @transactions << transaction.to_hash
-  end
+  @transactions = Transaction.all
+  # Transaction.find_each do |transaction|
+  #   @transactions << transaction.to_hash
+  # end
   erb :"transactions/index"
 end
 
 #BY PRODUCT
+get "/products/:product" do
+  T
+end
