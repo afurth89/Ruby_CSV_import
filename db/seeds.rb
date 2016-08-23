@@ -2,7 +2,7 @@ require "csv"
 
 data = Array.new
 
-CSV.foreach("./seeds/SalesJan2009.csv", 
+CSV.foreach("./lib/seeds/SalesJan2009.csv", 
   { 
     encoding: "UTF-8", 
     headers: true,
