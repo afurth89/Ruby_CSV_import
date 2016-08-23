@@ -17,5 +17,6 @@ end
 
 #BY PRODUCT
 get "/products/:product" do
-  T
+  @transactions = Transaction.where('product = ?', params[:product])
+  erb :"transactions/by_product/Product1"
 end
