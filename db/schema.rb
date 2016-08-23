@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 20160822210805) do
 
   create_table "transactions", force: :cascade do |t|
+    t.datetime "transaction_date"
     t.string   "product"
     t.integer  "price"
     t.string   "payment_type"
@@ -20,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160822210805) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
+    t.datetime "account_created"
+    t.datetime "last_login"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
