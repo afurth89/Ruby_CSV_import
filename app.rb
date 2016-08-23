@@ -6,6 +6,7 @@ require './environments'
 class Transaction < ActiveRecord::Base
 end
 
+# ALL transactions
 get "/" do
   @transactions = Array.new
   Transaction.find_each do |transaction|
@@ -13,3 +14,5 @@ get "/" do
   end
   erb :"transactions/index"
 end
+
+#BY PRODUCT

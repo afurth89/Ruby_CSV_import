@@ -37,7 +37,23 @@
   </div>
 
   <div class="container">
-    <%= yield %>
+    <h1>All Transactions</h1>
+    <h3><%= @transactions.count %> records displayed</h3>
+    <table class="table table-bordered">
+      <tr>
+        <th>Transaction Date</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Payment Type</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Account Created</th>
+        <th>Last Login</th>
+      </tr>
+      <%= yield %> <!-- YIELD -->
+    </table>
   </div>
 
   <!-- Bootstrap core JavaScript
