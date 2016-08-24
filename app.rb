@@ -40,3 +40,19 @@ get "/payment/:type" do
   @title = "for " + params[:type] + "cards"
   erb :"transactions/index"
 end
+
+# All transactions over $1200
+get "/scenario/1" do
+  @transactions = Transaction.where('price > ?', 1200)
+  @title = "above $1200"
+  erb :"transactions/index"
+end
+
+
+# All transactions from France who used a Visa card
+
+# All transactions that have a transaction date
+
+# All transactions that aren't missing any dates
+
+# All transactions made by someone who made multiple transactions
