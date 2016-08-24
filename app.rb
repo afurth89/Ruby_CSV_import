@@ -27,6 +27,7 @@ end
 
 #BY PRODUCT
 get "/products/:product" do
+  @column_overview = Transaction.group('product').count
   @transactions = Transaction.where('product = ?', params[:product])
   @title = "for " + params[:product]
   erb :"transactions/index"
@@ -34,6 +35,7 @@ end
 
 #BY PAYMENT TYPE
 get "/payment/:type" do
+  @column_overview = Transaction.group('payment_type').count
   @transactions = Transaction.where('payment_type = ?', params[:type])
   @title = "for " + params[:type] + "cards"
   erb :"transactions/index"

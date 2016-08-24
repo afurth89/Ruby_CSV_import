@@ -58,6 +58,13 @@
   <div class="container">
     <h1><%= title %></h1>
     <h3><%= @transactions.count %> records displayed</h3>
+    <% if @column_overview %>
+      <ul>
+      <% @column_overview.each do |field, count| %>
+        <li><%= field %>: <%= count %></li>
+      <% end %>
+      </ul>
+    <% end %>
     <table class="table table-bordered">
       <tr>
         <th>Transaction Date</th>
