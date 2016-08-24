@@ -31,3 +31,10 @@ get "/products/:product" do
   @title = "for " + params[:product]
   erb :"transactions/index"
 end
+
+#BY PAYMENT TYPE
+get "/payment/:type" do
+  @transactions = Transaction.where('payment_type = ?', params[:type])
+  @title = "for " + params[:type] + "cards"
+  erb :"transactions/index"
+end
