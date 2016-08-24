@@ -50,8 +50,18 @@ end
 
 
 # All transactions from France who used a Visa card
+get "/scenario/2" do
+  @transactions = Transaction.where('country = ? AND payment_type = ?', "France", "Visa")
+  @title = "where the country is France and the Payment Type is Visa"
+  erb :"transactions/index"
+end
 
 # All transactions that have a transaction date
+get "/scenario/3" do
+  @transactions = Transaction.where.not(transaction_date: nil)
+  @title = "that contain a transaction date"
+  erb :"transactions/index"
+end
 
 # All transactions that aren't missing any dates
 
